@@ -43,8 +43,6 @@ error-pages-demo/
 
 ## ⚙️ Installation Guide
 
-### 1. Clone the 프로젝트
-
 ```bash
 git clone https://github.com/your-username/error-pages-demo.git
 cd error-pages-demo
