@@ -1,4 +1,4 @@
-# 🚨 PHP_Laravel12_Create_Custom_Error_Pages 
+# PHP_Laravel12_Create_Custom_Error_Pages 
 
 A beautiful Laravel project demonstrating fully customized **error pages** using **Tailwind CSS**.
 
@@ -6,7 +6,7 @@ This project helps you test and understand how Laravel handles errors like **404
 
 ---
 
-## 📌 Project Features
+## Project Features
 
 ✅ No database required  
 ✅ Works with Laravel 10 / 11 / 12  
@@ -17,12 +17,12 @@ This project helps you test and understand how Laravel handles errors like **404
 
 ---
 
-📸 Project Screenshots
+# Project Screenshots
 <img width="1072" height="780" alt="image" src="https://github.com/user-attachments/assets/4f5b48e4-c263-4e72-ac1a-d019b8d1882f" />
 <img width="1760" height="752" alt="image" src="https://github.com/user-attachments/assets/b691c45e-13ba-46e4-a05e-e209c15a7de3" />
 
 
-## ⚙️ Installation Guide
+##  Installation Guide
 
 ```bash
 git clone https://github.com/your-username/error-pages-demo.git
@@ -49,7 +49,7 @@ php artisan config:clear
 php artisan route:clear
 php artisan view:clear
 
-▶️ Run the Project
+## Run the Project
 php artisan serve
 
 
@@ -57,7 +57,7 @@ Open in browser:
 
 http://127.0.0.1:8000
 
-🔥 Test Error Pages
+Test Error Pages
 URL	Error Type
 /test/404	Page Not Found
 /test/500	Server Error
@@ -69,7 +69,7 @@ URL	Error Type
 /exception	Unhandled Exception
 /any-wrong-url	404 Error
 
-## 📁 Project Structure
+## Project Structure
 
 error-pages-demo/
 ├── .env
@@ -94,7 +94,7 @@ Example:
 
 http://127.0.0.1:8000/test/404
 
-🖌️ Design Info
+Design Info
 
 UI built with Tailwind CSS
 
