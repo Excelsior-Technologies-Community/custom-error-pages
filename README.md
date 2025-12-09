@@ -1,4 +1,4 @@
-# 🚨 Laravel Custom Error Pages Demo
+# 🚨 Laravel-12 Custom Error 
 
 A beautiful Laravel project demonstrating fully customized **error pages** using **Tailwind CSS**.
 
