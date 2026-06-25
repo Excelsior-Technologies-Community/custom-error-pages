@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestErrorController;
+use App\Http\Controllers\DashboardController;
 
 // Main home page (changed from welcome to home)
 Route::get('/', function () {
@@ -51,3 +52,5 @@ Route::get('/test/error/json/500', [TestErrorController::class, 'testJson500']);
 Route::get('/home', function () {
     return redirect('/');
 });
+
+Route::get('/dashboard', [DashboardController::class,'index']);
