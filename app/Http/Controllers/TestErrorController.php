@@ -3,39 +3,55 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\ErrorVisit;
 
 class TestErrorController extends Controller
 {
+    private function logError($code)
+    {
+        ErrorVisit::create([
+            'error_code' => $code,
+            'url' => request()->fullUrl()
+        ]);
+    }
+
     public function test404()
     {
-        abort(404, 'Custom 404 message from controller');
+        $this->logError(404);
+        abort(404);
     }
-    
+
     public function test500()
     {
-        abort(500, 'Custom 500 message from controller');
+        $this->logError(500);
+        abort(500);
     }
-    
+
     public function test403()
     {
-        abort(403, 'Custom 403 message from controller');
+        $this->logError(403);
+        abort(403);
     }
-    
+
     public function testJson404(Request $request)
     {
+        $this->logError(404);
+
         if ($request->expectsJson()) {
-            abort(404, 'JSON 404 error response');
+            abort(404);
         }
-        
-        abort(404, 'Regular 404 error');
+
+        abort(404);
     }
-    
+
     public function testJson500(Request $request)
     {
+        $this->logError(500);
+
         if ($request->expectsJson()) {
-            abort(500, 'JSON 500 error response');
+            abort(500);
         }
-        
-        abort(500, 'Regular 500 error');
+
+        abort(500);
     }
 }
