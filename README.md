@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 # PHP_Laravel12_Create_Custom_Error_Pages 
 
 A beautiful Laravel project demonstrating fully customized **error pages** using **Tailwind CSS**.
@@ -280,7 +278,3 @@ error-pages-demo/
 * Interview demonstrations
 
 ---
-<<<<<<< HEAD
->>>>>>> development
-=======
->>>>>>> main
