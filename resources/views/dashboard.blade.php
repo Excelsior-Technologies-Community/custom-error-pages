@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,245 +9,298 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
-        .card-hover{
+        .card-hover {
             transition: all .3s ease;
         }
 
-        .card-hover:hover{
+        .card-hover:hover {
             transform: translateY(-5px);
         }
     </style>
 </head>
+
 <body class="bg-slate-100">
 
-<div class="container mx-auto px-6 py-8">
+    <div class="container mx-auto px-6 py-8">
 
-    <!-- Header -->
+        <!-- Header -->
 
-    <div class="flex justify-between items-center mb-8">
+        <div class="flex justify-between items-center mb-8">
 
-        <div>
-            <h1 class="text-4xl font-bold text-slate-800">
-                Error Analytics Dashboard
-            </h1>
+            <div>
+                <h1 class="text-4xl font-bold text-slate-800">
+                    Error Analytics Dashboard
+                </h1>
 
-            <p class="text-gray-500 mt-2">
-                Monitor and track application error activity
-            </p>
-        </div>
+                <p class="text-gray-500 mt-2">
+                    Monitor and track application error activity
+                </p>
+            </div>
 
-        <div>
-            <span class="bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-semibold">
-                System Active
-            </span>
-        </div>
-
-    </div>
-
-    <!-- Statistics -->
-
-    <div class="grid md:grid-cols-4 gap-6 mb-8">
-
-        <div class="card-hover bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-2xl shadow-lg p-6">
-
-            <h3 class="text-lg font-medium">
-                Total Errors
-            </h3>
-
-            <p class="text-4xl font-bold mt-3">
-                {{ $totalErrors }}
-            </p>
+            <div>
+                <span class="bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-semibold">
+                    System Active
+                </span>
+            </div>
 
         </div>
 
-        <div class="card-hover bg-gradient-to-r from-red-500 to-red-700 text-white rounded-2xl shadow-lg p-6">
+        <!-- Statistics -->
 
-            <h3 class="text-lg font-medium">
-                404 Errors
-            </h3>
+        <div class="grid md:grid-cols-4 gap-6 mb-8">
 
-            <p class="text-4xl font-bold mt-3">
-                {{ $total404 }}
-            </p>
+            <div class="card-hover bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-2xl shadow-lg p-6">
 
-        </div>
+                <h3 class="text-lg font-medium">
+                    Total Errors
+                </h3>
 
-        <div class="card-hover bg-gradient-to-r from-purple-500 to-purple-700 text-white rounded-2xl shadow-lg p-6">
-
-            <h3 class="text-lg font-medium">
-                403 Errors
-            </h3>
-
-            <p class="text-4xl font-bold mt-3">
-                {{ $total403 }}
-            </p>
-
-        </div>
-
-        <div class="card-hover bg-gradient-to-r from-orange-500 to-orange-700 text-white rounded-2xl shadow-lg p-6">
-
-            <h3 class="text-lg font-medium">
-                500 Errors
-            </h3>
-
-            <p class="text-4xl font-bold mt-3">
-                {{ $total500 }}
-            </p>
-
-        </div>
-
-    </div>
-
-    <!-- Search -->
-
-    <div class="bg-white rounded-2xl shadow-md p-6 mb-8">
-
-        <form method="GET">
-
-            <div class="flex gap-3">
-
-                <input
-                    type="text"
-                    name="search"
-                    value="{{ request('search') }}"
-                    placeholder="Search Error Code..."
-                    class="flex-1 border border-gray-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-400 focus:outline-none"
-                >
-
-                <button
-                    type="submit"
-                    class="bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700 transition"
-                >
-                    Search
-                </button>
+                <p class="text-4xl font-bold mt-3">
+                    {{ $totalErrors }}
+                </p>
 
             </div>
 
-        </form>
+            <div class="card-hover bg-gradient-to-r from-red-500 to-red-700 text-white rounded-2xl shadow-lg p-6">
 
-    </div>
+                <h3 class="text-lg font-medium">
+                    404 Errors
+                </h3>
 
-    <!-- Table -->
+                <p class="text-4xl font-bold mt-3">
+                    {{ $total404 }}
+                </p>
 
-    <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+            </div>
 
-        <div class="px-6 py-4 border-b">
+            <div class="card-hover bg-gradient-to-r from-purple-500 to-purple-700 text-white rounded-2xl shadow-lg p-6">
 
-            <h2 class="text-xl font-semibold text-slate-800">
-                Error Logs
-            </h2>
+                <h3 class="text-lg font-medium">
+                    403 Errors
+                </h3>
+
+                <p class="text-4xl font-bold mt-3">
+                    {{ $total403 }}
+                </p>
+
+            </div>
+
+            <div class="card-hover bg-gradient-to-r from-orange-500 to-orange-700 text-white rounded-2xl shadow-lg p-6">
+
+                <h3 class="text-lg font-medium">
+                    500 Errors
+                </h3>
+
+                <p class="text-4xl font-bold mt-3">
+                    {{ $total500 }}
+                </p>
+
+            </div>
 
         </div>
 
-        <div class="overflow-x-auto">
+        <!-- Search + Filter -->
 
-            <table class="w-full">
+        <div class="bg-white rounded-2xl shadow-md p-6 mb-8">
 
-                <thead>
+            <form method="GET">
 
-                    <tr class="bg-slate-800 text-white">
+                <div class="flex gap-3">
 
-                        <th class="p-4 text-left">
-                            ID
-                        </th>
 
-                        <th class="p-4 text-left">
-                            Error Code
-                        </th>
+                    <input
+                        type="text"
+                        name="search"
+                        value="{{ request('search') }}"
+                        placeholder="Search Error Code / URL / Message..."
+                        class="flex-1 border border-gray-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-400 focus:outline-none">
 
-                        <th class="p-4 text-left">
-                            URL
-                        </th>
 
-                        <th class="p-4 text-left">
-                            Date & Time
-                        </th>
+                    <select
+                        name="error"
+                        class="border border-gray-300 rounded-xl px-4 py-3">
 
-                    </tr>
 
-                </thead>
+                        <option value="">
+                            All Errors
+                        </option>
 
-                <tbody>
 
-                @forelse($visits as $visit)
+                        <option value="404"
+                            {{ request('error') == 404 ? 'selected' : '' }}>
+                            404
+                        </option>
 
-                    <tr class="border-b hover:bg-slate-50">
 
-                        <td class="p-4">
-                            {{ $visit->id }}
-                        </td>
+                        <option value="403"
+                            {{ request('error') == 403 ? 'selected' : '' }}>
+                            403
+                        </option>
 
-                        <td class="p-4">
 
-                            @if($visit->error_code == 404)
+                        <option value="500"
+                            {{ request('error') == 500 ? 'selected' : '' }}>
+                            500
+                        </option>
+
+
+                    </select>
+
+
+                    <button
+                        type="submit"
+                        class="bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700">
+
+                        Filter
+
+                    </button>
+
+                    <a href="{{ route('dashboard.export') }}"
+                        class="bg-green-600 text-white px-6 py-3 rounded-xl hover:bg-green-700">
+
+                        Export CSV
+
+                    </a>
+
+
+                </div>
+
+            </form>
+
+        </div>
+
+        <!-- Table -->
+
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+
+            <div class="px-6 py-4 border-b">
+
+                <h2 class="text-xl font-semibold text-slate-800">
+                    Error Logs
+                </h2>
+
+            </div>
+
+            <div class="overflow-x-auto">
+
+                <table class="w-full">
+
+                    <thead>
+
+                        <tr class="bg-slate-800 text-white">
+
+                            <th class="p-4 text-left">
+                                ID
+                            </th>
+
+                            <th class="p-4 text-left">
+                                Error Code
+                            </th>
+
+                            <th class="p-4 text-left">
+                                URL
+                            </th>
+
+                            <th class="p-4 text-left">
+                                Date & Time
+                            </th>
+
+                            <th class="p-4 text-left">
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        @forelse($visits as $visit)
+
+                        <tr class="border-b hover:bg-slate-50">
+
+                            <td class="p-4">
+                                {{ $visit->id }}
+                            </td>
+
+                            <td class="p-4">
+
+                                @if($visit->error_code == 404)
 
                                 <span class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm">
                                     404
                                 </span>
 
-                            @elseif($visit->error_code == 403)
+                                @elseif($visit->error_code == 403)
 
                                 <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm">
                                     403
                                 </span>
 
-                            @elseif($visit->error_code == 500)
+                                @elseif($visit->error_code == 500)
 
                                 <span class="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-sm">
                                     500
                                 </span>
 
-                            @else
+                                @else
 
                                 <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
                                     {{ $visit->error_code }}
                                 </span>
 
-                            @endif
+                                @endif
 
-                        </td>
+                            </td>
 
-                        <td class="p-4">
-                            {{ $visit->url }}
-                        </td>
+                            <td class="p-4">
+                                {{ $visit->url }}
+                            </td>
 
-                        <td class="p-4 text-gray-500">
-                            {{ $visit->created_at->format('d M Y h:i A') }}
-                        </td>
+                            <td class="p-4 text-gray-500">
+                                {{ $visit->created_at->format('d M Y h:i A') }}
+                            </td>
 
-                    </tr>
+                            <td class="p-4">
+                                <a href="{{ route('error.show',$visit->id) }}" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+                                    View
+                                </a>
+                            </td>
 
-                @empty
+                        </tr>
 
-                    <tr>
+                        @empty
 
-                        <td colspan="4" class="text-center p-8 text-gray-500">
+                        <tr>
 
-                            No error logs found.
+                            <td colspan="5" class="text-center p-8 text-gray-500">
 
-                        </td>
+                                No error logs found.
 
-                    </tr>
+                            </td>
 
-                @endforelse
+                        </tr>
 
-                </tbody>
+                        @endforelse
 
-            </table>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+        <!-- Pagination -->
+
+        <div class="mt-6">
+
+            {{ $visits->links() }}
 
         </div>
 
     </div>
 
-    <!-- Pagination -->
-
-    <div class="mt-6">
-
-        {{ $visits->links() }}
-
-    </div>
-
-</div>
-
 </body>
+
 </html>
