@@ -8,6 +8,9 @@ class ErrorVisit extends Model
 {
     protected $fillable = [
         'error_code',
-        'url'
+        'url',
+        'ip_address',
+        'user_agent',
+        'message'
     ];
 }

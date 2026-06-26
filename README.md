@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # PHP_Laravel12_Create_Custom_Error_Pages 
 
 A beautiful Laravel project demonstrating fully customized **error pages** using **Tailwind CSS**.
@@ -105,6 +106,8 @@ Responsive cards & buttons
 
 Clean Modern UI
 =======
+=======
+>>>>>>> main
 # PHP_Laravel12_Create_Custom_Error_Pages
 
 A clean and modern Laravel project demonstrating **fully customized error pages** using **Tailwind CSS**.
@@ -277,4 +280,7 @@ error-pages-demo/
 * Interview demonstrations
 
 ---
+<<<<<<< HEAD
 >>>>>>> development
+=======
+>>>>>>> main
